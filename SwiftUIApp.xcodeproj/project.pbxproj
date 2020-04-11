@@ -15,6 +15,23 @@
 		5048E85C2396CFE800549E69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5048E85A2396CFE800549E69 /* LaunchScreen.storyboard */; };
 		5048E8672396CFE800549E69 /* SwiftUIAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048E8662396CFE800549E69 /* SwiftUIAppTests.swift */; };
 		5048E8722396CFE800549E69 /* SwiftUIAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048E8712396CFE800549E69 /* SwiftUIAppUITests.swift */; };
+		5085A6B724421A4C0098A632 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6B624421A4C0098A632 /* RecipeListView.swift */; };
+		5085A6CA24421AD80098A632 /* JSONDataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6B924421AD70098A632 /* JSONDataEncoding.swift */; };
+		5085A6CB24421AD80098A632 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6BA24421AD70098A632 /* JSONEncodingHelper.swift */; };
+		5085A6CC24421AD80098A632 /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6BB24421AD70098A632 /* CodableHelper.swift */; };
+		5085A6CD24421AD80098A632 /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6BD24421AD70098A632 /* RecipeAPI.swift */; };
+		5085A6CE24421AD80098A632 /* URLSessionImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6BE24421AD70098A632 /* URLSessionImplementations.swift */; };
+		5085A6CF24421AD80098A632 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6BF24421AD70098A632 /* Extensions.swift */; };
+		5085A6D024421AD80098A632 /* OpenISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C024421AD70098A632 /* OpenISO8601DateFormatter.swift */; };
+		5085A6D124421AD80098A632 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C224421AD70098A632 /* Recipe.swift */; };
+		5085A6D224421AD80098A632 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C324421AD70098A632 /* ErrorModel.swift */; };
+		5085A6D324421AD80098A632 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C424421AD70098A632 /* RecipeList.swift */; };
+		5085A6D424421AD80098A632 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C524421AD70098A632 /* APIs.swift */; };
+		5085A6D524421AD80098A632 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C624421AD70098A632 /* APIHelper.swift */; };
+		5085A6D624421AD80098A632 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C724421AD70098A632 /* Configuration.swift */; };
+		5085A6D724421AD80098A632 /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C824421AD70098A632 /* SynchronizedDictionary.swift */; };
+		5085A6D824421AD80098A632 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6C924421AD80098A632 /* Models.swift */; };
+		5085A6DA24421E620098A632 /* RandomAccessCollection+isLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085A6D924421E620098A632 /* RandomAccessCollection+isLast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +66,23 @@
 		5048E86D2396CFE800549E69 /* SwiftUIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5048E8712396CFE800549E69 /* SwiftUIAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppUITests.swift; sourceTree = "<group>"; };
 		5048E8732396CFE800549E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5085A6B624421A4C0098A632 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		5085A6B924421AD70098A632 /* JSONDataEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDataEncoding.swift; sourceTree = "<group>"; };
+		5085A6BA24421AD70098A632 /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
+		5085A6BB24421AD70098A632 /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
+		5085A6BD24421AD70098A632 /* RecipeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
+		5085A6BE24421AD70098A632 /* URLSessionImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionImplementations.swift; sourceTree = "<group>"; };
+		5085A6BF24421AD70098A632 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5085A6C024421AD70098A632 /* OpenISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		5085A6C224421AD70098A632 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		5085A6C324421AD70098A632 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		5085A6C424421AD70098A632 /* RecipeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
+		5085A6C524421AD70098A632 /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		5085A6C624421AD70098A632 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		5085A6C724421AD70098A632 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		5085A6C824421AD70098A632 /* SynchronizedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizedDictionary.swift; sourceTree = "<group>"; };
+		5085A6C924421AD80098A632 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5085A6D924421E620098A632 /* RandomAccessCollection+isLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+isLast.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +133,15 @@
 		5048E84E2396CFE500549E69 /* SwiftUIApp */ = {
 			isa = PBXGroup;
 			children = (
+				5085A6B824421AC40098A632 /* OpenAPIs */,
 				5048E84F2396CFE500549E69 /* AppDelegate.swift */,
 				5048E8512396CFE500549E69 /* SceneDelegate.swift */,
 				5048E8532396CFE500549E69 /* ContentView.swift */,
 				5048E8552396CFE800549E69 /* Assets.xcassets */,
 				5048E85A2396CFE800549E69 /* LaunchScreen.storyboard */,
 				5048E85D2396CFE800549E69 /* Info.plist */,
+				5085A6B624421A4C0098A632 /* RecipeListView.swift */,
+				5085A6D924421E620098A632 /* RandomAccessCollection+isLast.swift */,
 				5048E8572396CFE800549E69 /* Preview Content */,
 			);
 			path = SwiftUIApp;
@@ -134,6 +171,44 @@
 				5048E8732396CFE800549E69 /* Info.plist */,
 			);
 			path = SwiftUIAppUITests;
+			sourceTree = "<group>";
+		};
+		5085A6B824421AC40098A632 /* OpenAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				5085A6C624421AD70098A632 /* APIHelper.swift */,
+				5085A6BC24421AD70098A632 /* APIs */,
+				5085A6C524421AD70098A632 /* APIs.swift */,
+				5085A6BB24421AD70098A632 /* CodableHelper.swift */,
+				5085A6C724421AD70098A632 /* Configuration.swift */,
+				5085A6BF24421AD70098A632 /* Extensions.swift */,
+				5085A6B924421AD70098A632 /* JSONDataEncoding.swift */,
+				5085A6BA24421AD70098A632 /* JSONEncodingHelper.swift */,
+				5085A6C124421AD70098A632 /* Models */,
+				5085A6C924421AD80098A632 /* Models.swift */,
+				5085A6C024421AD70098A632 /* OpenISO8601DateFormatter.swift */,
+				5085A6C824421AD70098A632 /* SynchronizedDictionary.swift */,
+				5085A6BE24421AD70098A632 /* URLSessionImplementations.swift */,
+			);
+			path = OpenAPIs;
+			sourceTree = "<group>";
+		};
+		5085A6BC24421AD70098A632 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				5085A6BD24421AD70098A632 /* RecipeAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		5085A6C124421AD70098A632 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5085A6C224421AD70098A632 /* Recipe.swift */,
+				5085A6C324421AD70098A632 /* ErrorModel.swift */,
+				5085A6C424421AD70098A632 /* RecipeList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +342,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5085A6DA24421E620098A632 /* RandomAccessCollection+isLast.swift in Sources */,
+				5085A6CA24421AD80098A632 /* JSONDataEncoding.swift in Sources */,
+				5085A6CC24421AD80098A632 /* CodableHelper.swift in Sources */,
+				5085A6B724421A4C0098A632 /* RecipeListView.swift in Sources */,
+				5085A6D124421AD80098A632 /* Recipe.swift in Sources */,
+				5085A6D524421AD80098A632 /* APIHelper.swift in Sources */,
+				5085A6CB24421AD80098A632 /* JSONEncodingHelper.swift in Sources */,
+				5085A6D224421AD80098A632 /* ErrorModel.swift in Sources */,
+				5085A6CE24421AD80098A632 /* URLSessionImplementations.swift in Sources */,
+				5085A6D024421AD80098A632 /* OpenISO8601DateFormatter.swift in Sources */,
+				5085A6CF24421AD80098A632 /* Extensions.swift in Sources */,
+				5085A6D624421AD80098A632 /* Configuration.swift in Sources */,
+				5085A6D724421AD80098A632 /* SynchronizedDictionary.swift in Sources */,
+				5085A6CD24421AD80098A632 /* RecipeAPI.swift in Sources */,
 				5048E8502396CFE500549E69 /* AppDelegate.swift in Sources */,
 				5048E8522396CFE500549E69 /* SceneDelegate.swift in Sources */,
+				5085A6D824421AD80098A632 /* Models.swift in Sources */,
 				5048E8542396CFE500549E69 /* ContentView.swift in Sources */,
+				5085A6D424421AD80098A632 /* APIs.swift in Sources */,
+				5085A6D324421AD80098A632 /* RecipeList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

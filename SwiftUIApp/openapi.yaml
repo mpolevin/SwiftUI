@@ -1,0 +1,84 @@
+openapi: 3.0.1
+info:
+  title: Recipe Puppy
+  description: 'Recipe Puppy'
+  version: 1.0.0
+externalDocs:
+  description: API Root
+  url: http://www.recipepuppy.com/
+servers:
+- url: http://www.recipepuppy.com/
+tags:
+- name: recipe
+  description: Recipes
+paths:
+  /api/:
+    get:
+      tags:
+      - recipe
+      summary: Get Recipe
+      operationId: getRecipe
+      parameters:
+        - name: i
+          in: query
+          description: Ingredient
+          required: true
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: Query
+          required: true
+          schema:
+            type: string
+        - name: p
+          in: query
+          description: Paging
+          required: true
+          schema:
+            type: integer  
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecipeList'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorModel'
+components:
+  schemas:
+    RecipeList:
+      type: object
+      properties:
+        title:
+          type: string
+        results:
+            type: array
+            items:
+                $ref: "#/components/schemas/Recipe"
+    Recipe:
+      type: object
+      properties:
+        title:
+          type: string
+        ingredients:
+          type: string
+        thumbnail:
+          type: string
+    ErrorModel:
+      type: object
+      required:
+      - message
+      - code
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+          minimum: 100
+          maximum: 600
