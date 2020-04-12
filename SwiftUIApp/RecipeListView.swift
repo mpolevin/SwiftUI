@@ -10,31 +10,44 @@ import Foundation
 import SwiftUI
 
 class RecipesViewModel: ObservableObject {
-
-    @Published private(set) var items: [Recipe] = [Recipe]()
-    @Published private(set) var page: Int = 0
-    @Published private(set) var isPageLoading: Bool = false
     
-    func loadPage(pageType: RecipeListView.PageType)  {
-        guard isPageLoading == false else {
-            return
+    @Published var items: [Recipe] = [Recipe]()
+    @Published var page: Int = 1
+    @Published var isPageLoading: Bool = false
+    
+    func loadPage() {
+       
+    }
+}
+
+class RecipesPotatoViewModel: RecipesViewModel {
+    
+    override func loadPage() {
+        RecipeAPI.getRecipe(i: "patato,egg", q: "potato pancakes", p: page) { response, error in
+            if let results = response?.results {
+                self.items.append(contentsOf: results)
+            }
+            self.isPageLoading = false
         }
-        isPageLoading = true
-        page += 1
-        var dish = ""
-        var ingredients = ""
-        switch pageType {
-        case .potato:
-            dish = "potato pancakes"
-            ingredients = "patato,egg"
-        case .cheese:
-            dish = "sandwich"
-            ingredients = "cheese"
-        case .cucumber:
-            dish = "salad"
-            ingredients = "cucumber"
+    }
+}
+
+class RecipesCheeseViewModel: RecipesViewModel {
+    
+    override func loadPage() {
+        RecipeAPI.getRecipe(i: "cheese", q: "sandwich", p: page) { response, error in
+            if let results = response?.results {
+                self.items.append(contentsOf: results)
+            }
+            self.isPageLoading = false
         }
-        RecipeAPI.getRecipe(i: ingredients, q: dish, p: page) { response, error in
+    }
+}
+
+class RecipesCucumberViewModel: RecipesViewModel {
+    
+    override func loadPage() {
+        RecipeAPI.getRecipe(i: "cucumber", q: "salad", p: page) { response, error in
             if let results = response?.results {
                 self.items.append(contentsOf: results)
             }
@@ -50,10 +63,10 @@ extension Recipe: Identifiable {
 }
 
 struct RecipeRow: View {
-
-    @EnvironmentObject var viewModel: RecipesViewModel
     
     let item: Recipe
+    let isPageLoading: Bool
+    let isLast: Bool
     
     var body: some View {
         
@@ -64,7 +77,7 @@ struct RecipeRow: View {
                 .font(.callout)
                 .foregroundColor(.gray)
             
-            if self.viewModel.isPageLoading && self.viewModel.items.isLast(item) {
+            if isPageLoading && isLast {
                 Divider()
                 Text("Loading...")
             }
@@ -72,35 +85,81 @@ struct RecipeRow: View {
     }
 }
 
-struct RecipeListView: View {
-
-    enum PageType: Int {
-        case potato
-        case cheese
-        case cucumber
-    }
+struct RecipePotatoListView: View {
     
-    var pageType: PageType = .potato
-    @EnvironmentObject var viewModel: RecipesViewModel
-
+    @EnvironmentObject var viewModel: RecipesPotatoViewModel
+    
     var body: some View {
         
         NavigationView {
             List(viewModel.items) { item in
                 VStack(alignment: .leading) {
-                    RecipeRow(item: item)
-                    .onAppear() {
-                        if self.viewModel.items.isLast(item) {
-                            self.viewModel.loadPage(pageType: self.pageType)
-                        }
+                    RecipeRow(item: item, isPageLoading: self.viewModel.isPageLoading, isLast: self.viewModel.items.isLast(item))
+                        .onAppear() {
+                            if self.viewModel.items.isLast(item) {
+                                self.viewModel.loadPage()
+                            }
                     }
                 }
             }
-            .navigationBarTitle("Recipes")
+            .navigationBarTitle("Recipes with Potato")
             .onAppear() {
-                self.viewModel.loadPage(pageType: self.pageType)
+                self.viewModel.loadPage()
             }
         }
     }
     
 }
+
+struct RecipeCucumberListView: View {
+    
+    @EnvironmentObject var viewModel: RecipesCucumberViewModel
+    
+    var body: some View {
+        
+        NavigationView {
+            List(viewModel.items) { item in
+                VStack(alignment: .leading) {
+                    RecipeRow(item: item, isPageLoading: self.viewModel.isPageLoading, isLast: self.viewModel.items.isLast(item))
+                        .onAppear() {
+                            if self.viewModel.items.isLast(item) {
+                                self.viewModel.loadPage()
+                            }
+                    }
+                }
+            }
+            .navigationBarTitle("Recipes with Cucumber")
+            .onAppear() {
+                self.viewModel.loadPage()
+            }
+        }
+    }
+    
+}
+
+struct RecipeCheeseListView: View {
+    
+    @EnvironmentObject var viewModel: RecipesCheeseViewModel
+    
+    var body: some View {
+        
+        NavigationView {
+            List(viewModel.items) { item in
+                VStack(alignment: .leading) {
+                    RecipeRow(item: item, isPageLoading: self.viewModel.isPageLoading, isLast: self.viewModel.items.isLast(item))
+                        .onAppear() {
+                            if self.viewModel.items.isLast(item) {
+                                self.viewModel.loadPage()
+                            }
+                    }
+                }
+            }
+            .navigationBarTitle("Recipes with Cheese")
+            .onAppear() {
+                self.viewModel.loadPage()
+            }
+        }
+    }
+    
+}
+

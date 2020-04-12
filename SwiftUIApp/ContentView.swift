@@ -10,12 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var recipesViewModel: RecipesViewModel
+    @EnvironmentObject var recipesPotatoViewModel: RecipesPotatoViewModel
+    @EnvironmentObject var recipesCheeseViewModel: RecipesCheeseViewModel
+    @EnvironmentObject var recipesCucumberViewModel: RecipesCucumberViewModel
     @State private var selection = 0
     
     var body: some View {
         TabView(selection: $selection) {
-            RecipeListView(pageType: .potato)
+            RecipePotatoListView()
                 .tag(0)
                 .tabItem {
                     VStack {
@@ -23,7 +25,7 @@ struct ContentView: View {
                         Image(systemName: "rectangle")
                     }
             }
-            RecipeListView(pageType: .cheese)
+            RecipeCucumberListView()
                 .tag(1)
                 .tabItem {
                     VStack {
@@ -31,7 +33,7 @@ struct ContentView: View {
                         Image(systemName: "triangle")
                     }
             }
-            RecipeListView(pageType: .cucumber)
+            RecipeCheeseListView()
                 .tag(2)
                 .tabItem {
                     VStack {
